@@ -11,7 +11,7 @@ model_name = "Helsinki-NLP/opus-mt-en-es"
 model = MarianMTModel.from_pretrained(model_name)
 tokenizer = MarianTokenizer.from_pretrained(model_name)
 
-# Página de inicio (opcional: puedes crear una plantilla HTML en la carpeta "templates")
+# Página de inicio
 @app.route("/")
 def home():
     return render_template("translate.html")
