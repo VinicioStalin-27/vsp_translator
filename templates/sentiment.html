@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Servicio de Predicción</title>
+    <script>
+        async function sendPrediction() {
+            const text = document.getElementById("inputText").value;
+            const response = await fetch("/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            document.getElementById("predictionResult").innerText = `Predicción: ${data.prediction}`;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h1>Servicio de Predicción de Sentimiento</h1>
+        <textarea id="inputText" rows="4" cols="50"
+            placeholder="Escribe un texto para predecir su sentimiento..."></textarea>
+        <br><br>
+        <button onclick="sendPrediction()">Obtener Predicción</button>
+        <p id="predictionResult" style="margin-top: 20px; font-size: 18px; font-weight: bold;"></p>
+    </div>
+</body>
+
+</html>

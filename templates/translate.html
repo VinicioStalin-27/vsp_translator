@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio de Traducción</title>
+    <script>
+        async function sendTranslation() {
+            const text = document.getElementById("inputText").value;
+            const response = await fetch("/translate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            document.getElementById("translationResult").innerText = `Traducción: ${data.translated_text}`;
+        }
+    </script>
+</head>
+
+<body>
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h1>Servicio de Traducción</h1>
+        <textarea id="inputText" rows="4" cols="50"
+            placeholder="Escribe un texto en inglés para traducirlo al español..."></textarea>
+        <br><br>
+        <button onclick="sendTranslation()">Traducir</button>
+        <p id="translationResult" style="margin-top: 20px; font-size: 18px; font-weight: bold;"></p>
+    </div>
+</body>
+
+</html>
