@@ -2,4 +2,5 @@ Flask
 flask-cors
 torch
 transformers
+sentencepiece
 gunicorn
