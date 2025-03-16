@@ -54,6 +54,7 @@ Finalmente se debe ingresar el texto en el campo de texto y hacer clic en el bot
 - Finalmente se debe hacer clic en Crear y esperar a que se despliegue el servicio.
 ![alt text](image-7.png)
 
-- Una vez que el servicio esté desplegado, se puede acceder a él a través de la URL proporcionada por Google Cloud.
-![alt text](image-2.png)
+- Una vez que el servicio esté desplegado, se puede acceder a él a través de la URL proporcionada por Google Cloud [URL](https://vsp-translator-975558047330.us-central1.run.app/).
+![alt text](image-8.png)
+
 
